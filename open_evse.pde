@@ -90,15 +90,15 @@ prog_char VERSTR[] PROGMEM = "1.0.9";
 #define DEFAULT_SERVICE_LEVEL 1 // 1=L1, 2=L2
 
 // current capacity in amps
-#define DEFAULT_CURRENT_CAPACITY_L1 12
+#define DEFAULT_CURRENT_CAPACITY_L1 13
 #define DEFAULT_CURRENT_CAPACITY_L2 16
 
 // minimum allowable current in amps
 #define MIN_CURRENT_CAPACITY 6
 
 // maximum allowable current in amps
-#define MAX_CURRENT_CAPACITY_L1 16 // J1772 Max for L1 on a 20A circuit
-#define MAX_CURRENT_CAPACITY_L2 80 // J1772 Max for L2
+#define MAX_CURRENT_CAPACITY_L1 13 // J1772 Max for L1 on a 20A circuit
+#define MAX_CURRENT_CAPACITY_L2 32 // J1772 Max for L2
 
 //J1772EVSEController
 //#define CURRENT_PIN 0 // analog current reading pin A0
@@ -1437,7 +1437,7 @@ uint8_t J1772EVSEController::doPost()
 	 g_OBD.LcdMsg_P(g_psAutoDetect,g_psLevel1);
 	 delay(500);
 #endif //Adafruit RGB LCD
-	  svclvl = 1; // L1
+	  svclvl = 2; // L1
 	}
       }  
   }
